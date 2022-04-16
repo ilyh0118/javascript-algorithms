@@ -9,9 +9,20 @@
 */
 
 function fibonacci(n) {
-    // Напишите код здесь
+    const numArr = [0, 1];
+    if(n <= 0) {
+        return 'Введите натуральное число!';
+    }
+    if(n === 1) {
+        return numArr[0];
+    }
+    for (let i=3; i<=n; i++) {
+        numArr.push(numArr[0] + numArr[1]);
+        numArr.shift();
+    }
+    return numArr[1];
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(fibonacci(4)); // 2. Четвёртое число последовательности — двойка (0, 1, 1, 2)
+console.log(fibonacci(0)); // 2. Четвёртое число последовательности — двойка (0, 1, 1, 2)
